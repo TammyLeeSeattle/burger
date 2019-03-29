@@ -12,7 +12,6 @@ var exphbs = require('express-handlebars');
 var app = express(); // call express
 var PORT = process.env.PORT || 8081;
 app.use(express.static(__dirname + "/public"));
-// app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
