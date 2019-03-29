@@ -10,5 +10,19 @@ router.get('/', function(req, res) {
     })
 }); // end of router.get
 
+router.put("/burgers/update", function (req, res) {
+    burger.update(req.body.burger_id, function (result) {
+        console.log(result);
+        res.redirect("/");
+    }) 
+}); // end of router.put
+
+router.post("/burgers/create", function(req, res) {
+    burger.create(req.body.burger_name, function(result) {
+        res.redirect("/");
+    })
+}); // end of router.post
+
+
 // export route so import request from server.js will work
 module.exports = router; 
